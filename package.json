@@ -1,5 +1,5 @@
 {
-  "name": "whatsapp-bot",
+  "name": "BotUp",
   "version": "2.0.0",
   "description": "Whatsapp Bot - Node Js",
   "main": "index.js",
@@ -9,12 +9,12 @@
   "author": "MrG3P5",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ArugaZ/whatsapp-bot.git"
+    "url": "https://github.com/irfnadi/BotUp.git"
   },
   "bugs": {
-    "url": "https://github.com/ArugaZ/whatsapp-bot/issues"
+    "url": "https://github.com/irfnadi/BotUp/issues"
   },
-  "homepage": "https://github.com/ArugaZ/whatsapp-bot",
+  "homepage": "https://github.com/irfnadi/BotUp",
   "license": "ISC",
   "dependencies": {
     "@open-wa/wa-automate": "^3.0.15",
