@@ -6,7 +6,7 @@ const HandleMsg = require('./HandleMsg')
 
 const start = (aruga = new Client()) => {
     console.log(color(figlet.textSync('----------------', { horizontalLayout: 'default' })))
-    console.log(color(figlet.textSync('BOT MrG3P5', { font: 'Ghost', horizontalLayout: 'default' })))
+    console.log(color(figlet.textSync('BOT IRFAN X NINDA', { font: 'Ghost', horizontalLayout: 'default' })))
     console.log(color(figlet.textSync('----------------', { horizontalLayout: 'default' })))
     console.log(color('[DEV]'), color('MrG3P5', 'yellow'))
     console.log(color('[~>>]'), color('BOT Started!', 'green'))
@@ -35,7 +35,7 @@ const start = (aruga = new Client()) => {
 	    })
 	    } else {
         await aruga.simulateTyping(chat.id, true).then(async () => {
-          await aruga.sendText(chat.id, `Hai Penghuni sini\nIm 🔰 *BOT ./MrG3P5* 🔰 \nUntuk memunculkan fitur ketik ${prefix}menu`)
+          await aruga.sendText(chat.id, `Hai Penghuni sini\nIm ♛ *BOT IRFAN X NINDA* ♛ \nUntuk memunculkan fitur ketik ${prefix}menu`)
         })
 	    }
 	}
@@ -56,7 +56,7 @@ const start = (aruga = new Client()) => {
 
     aruga.onIncomingCall(async (callData) => {
         // ketika seseorang menelpon nomor bot akan mengirim pesan
-        await aruga.sendText(callData.peerJid, 'Maaf sedang tidak bisa menerima panggilan.\n\n🔰 *BOT ./MrG3P5* 🔰')
+        await aruga.sendText(callData.peerJid, 'Maaf sedang tidak bisa menerima panggilan.\n\n♛ *BOT IRFAN X NINDA* ♛')
         .then(async () => {
             // bot akan memblock nomor itu
             await aruga.contactBlock(callData.peerJid)
