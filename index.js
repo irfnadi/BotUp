@@ -6,9 +6,9 @@ const HandleMsg = require('./HandleMsg')
 
 const start = (aruga = new Client()) => {
     console.log(color(figlet.textSync('----------------', { horizontalLayout: 'default' })))
-    console.log(color(figlet.textSync('BOT IRFAN X NINDA', { font: 'Ghost', horizontalLayout: 'default' })))
+    console.log(color(figlet.textSync('ARUGA BOT', { font: 'Ghost', horizontalLayout: 'default' })))
     console.log(color(figlet.textSync('----------------', { horizontalLayout: 'default' })))
-    console.log(color('[DEV]'), color('MrG3P5', 'yellow'))
+    console.log(color('[DEV]'), color('ArugaZ', 'yellow'))
     console.log(color('[~>>]'), color('BOT Started!', 'green'))
 
     // Mempertahankan sesi agar tetap nyala
@@ -22,20 +22,20 @@ const start = (aruga = new Client()) => {
 	const groups = await aruga.getAllGroups()
 	// kondisi ketika batas group bot telah tercapai,ubah di file settings/setting.json
 	if (groups.length > groupLimit) {
-	await aruga.sendText(chat.id, `Sorry, Kapasitas Grup sudah mencapai limitl\nMax Group is: ${groupLimit}`).then(() => {
+	await aruga.sendText(chat.id, `Sorry, the group on this bot is full\nMax Group is: ${groupLimit}`).then(() => {
 	      aruga.leaveGroup(chat.id)
 	      aruga.deleteChat(chat.id)
 	  }) 
 	} else {
 	// kondisi ketika batas member group belum tercapai, ubah di file settings/setting.json
 	    if (chat.groupMetadata.participants.length < memberLimit) {
-	    await aruga.sendText(chat.id, `Sorry, Jika ingin menginvite minimal ${memberLimit} member`).then(() => {
+	    await aruga.sendText(chat.id, `Sorry, BOT comes out if the group members do not exceed ${memberLimit} people`).then(() => {
 	      aruga.leaveGroup(chat.id)
 	      aruga.deleteChat(chat.id)
 	    })
 	    } else {
         await aruga.simulateTyping(chat.id, true).then(async () => {
-          await aruga.sendText(chat.id, `Hai Penghuni sini\nIm ♛ *BOT IRFAN X NINDA* ♛ \nUntuk memunculkan fitur ketik ${prefix}menu`)
+          await aruga.sendText(chat.id, `Hai minna~, Im Aruga BOT. To find out the commands on this bot type ${prefix}menu`)
         })
 	    }
 	}
@@ -46,17 +46,17 @@ const start = (aruga = new Client()) => {
         const host = await aruga.getHostNumber() + '@c.us'
         // kondisi ketika seseorang diinvite/join group lewat link
         if (event.action === 'add' && event.who !== host) {
-            await aruga.sendTextWithMentions(event.chat, `Hello @${event.who.replace('@c.us', '')} \nSelamat Datang DiGrup Sini\nSemoga Tidak Betah✨`)
+            await aruga.sendTextWithMentions(event.chat, `Hello, Welcome to the group @${event.who.replace('@c.us', '')} \n\nHave fun with us✨`)
         }
         // kondisi ketika seseorang dikick/keluar dari group
         if (event.action === 'remove' && event.who !== host) {
-            await aruga.sendTextWithMentions(event.chat, `@${event.who.replace('@c.us', '')}\n Telah Meninggal Dunia\nSemoga Tenang DiAlam Sana✨`)
+            await aruga.sendTextWithMentions(event.chat, `Good bye @${event.who.replace('@c.us', '')}, We'll miss you✨`)
         }
     })
 
     aruga.onIncomingCall(async (callData) => {
         // ketika seseorang menelpon nomor bot akan mengirim pesan
-        await aruga.sendText(callData.peerJid, 'Maaf sedang tidak bisa menerima panggilan.\n\n♛ *BOT IRFAN X NINDA* ♛')
+        await aruga.sendText(callData.peerJid, 'Maaf sedang tidak bisa menerima panggilan.\n\n-bot')
         .then(async () => {
             // bot akan memblock nomor itu
             await aruga.contactBlock(callData.peerJid)
